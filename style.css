@@ -1,4 +1,14 @@
-body{
-    background: black;
-    color: whiteF;
+body {
+    /* background: white;
+    color: black; */
+}
+
+/* left div section  */
+
+.left {
+    width: 25vw;
+}
+
+.right {
+    width: 75vw;
 }
