@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     /* background: white;
     color: black; */
@@ -11,4 +16,16 @@ body {
 
 .right {
     width: 75vw;
+}
+
+.home ul {
+    margin: 2px;
+}
+
+.home ul li {
+    display: flex;
+    gap: 12px;
+    width: 14px;
+    list-style: none;
+
 }
