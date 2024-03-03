@@ -14,3 +14,28 @@
 .items-center{
     align-items: center;
 }
+
+.home{
+    padding: 20px;
+}
+
+.bg-black{
+    background-color: black;
+    color: white;
+}
+
+.invert{
+    filter: invert(1);
+}
+
+.bg-grey{
+    background-color: #121212;
+}
+
+.rounded{
+    border-radius: 8px;
+}
+
+.m-1{
+    margin: 4px;
+}
