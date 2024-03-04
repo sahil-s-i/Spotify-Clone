@@ -1,11 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-}
-
-body {
-    /* background: white;
-    color: black; */
+    font-family: "Roboto", sans-serif;
 }
 
 /* left div section  */
@@ -28,5 +26,19 @@ body {
     gap: 12px;
     width: 14px;
     list-style: none;
+    padding-top: 14px;
+    font-weight: bold;
+}
 
+.heading{
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    padding-top: 14px;
+    align-items: center;
+    font-weight: bold;
+}
+
+.heading img{
+    width: 30px;
 }
