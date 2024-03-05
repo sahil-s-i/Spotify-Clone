@@ -35,8 +35,10 @@
     gap: 12px;
     width: 100%;
     padding-top: 14px;
+    padding: 23px 14px;
     align-items: center;
     font-weight: bold;
+    font-size: 13px;
 }
 
 .heading img{
