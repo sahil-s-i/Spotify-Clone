@@ -6,7 +6,7 @@
     font-family: "Roboto", sans-serif;
 }
 
-body{
+body {
     background: black;
     color: white;
 }
@@ -35,7 +35,7 @@ body{
     font-weight: bold;
 }
 
-.heading{
+.heading {
     display: flex;
     gap: 12px;
     width: 100%;
@@ -46,16 +46,16 @@ body{
     font-size: 13px;
 }
 
-.heading img{
+.heading img {
     width: 30px;
 }
 
-.library{
+.library {
     min-height: 80vh;
     position: relative;
 }
 
-.footer{
+.footer {
     display: flex;
     font-size: 10px;
     color: grey;
@@ -64,7 +64,7 @@ body{
     bottom: 0;
 }
 
-.footer a{
+.footer a {
     color: grey;
     text-decoration: none;
 }
@@ -72,6 +72,11 @@ body{
 
 /* right section  */
 
-.header{
+.header {
     display: flex;
+    justify-content: space-between;
+}
+
+.header>* {
+    padding: 20px;
 }
