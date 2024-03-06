@@ -68,3 +68,10 @@ body{
     color: grey;
     text-decoration: none;
 }
+
+
+/* right section  */
+
+.header{
+    display: flex;
+}
