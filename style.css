@@ -90,8 +90,21 @@ body {
     padding: 16px;
 }
 
-.spotifyPlaylists .card {
+.cardContainer{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.card {
     width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #252525;
+}
+
+.card>* {
+    padding-top: 9px;
 }
 
 .card img {
