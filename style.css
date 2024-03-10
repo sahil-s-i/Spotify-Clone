@@ -62,6 +62,7 @@ body {
     gap: 13px;
     position: absolute;
     bottom: 0;
+    padding: 10px 0px;
 }
 
 .footer a {
@@ -118,4 +119,6 @@ body {
     position: absolute;
     right: 20px;
     top: 153px;
+    opacity: 0;
+    transition: all 1s ease-out;
 }
