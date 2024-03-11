@@ -96,6 +96,8 @@ body {
     gap: 10px;
     flex-wrap: wrap;
     margin: 30px;
+    overflow-y: scroll;
+    max-height: 70vh;
 }
 
 .card {
@@ -121,4 +123,28 @@ body {
     top: 153px;
     opacity: 0;
     transition: all 1s ease-out;
+}
+
+
+/* website's dark scroll bar  */
+
+
+/* Width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #333;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #666;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
 }
