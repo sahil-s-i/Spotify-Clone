@@ -172,11 +172,17 @@ body {
 .playbar{
     position: absolute;
     bottom: 0;
-    background-color: rgb(13, 33, 13);
+    background-color: rgb(44, 186, 44);
     width: 100%;
     padding: 10px;
 }
 
+.songbuttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
 
 
 /* website's dark scroll bar  */
