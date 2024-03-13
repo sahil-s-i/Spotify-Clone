@@ -172,7 +172,7 @@ body {
 .playbar{
     position: absolute;
     bottom: 0;
-    background-color: rgb(44, 186, 44);
+    background-color: rgb(211, 205, 205);
     width: 90%;
     padding: 10px;
 }
