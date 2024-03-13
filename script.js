@@ -1,6 +1,6 @@
 console.log("Hello World");
 
-
+// fuction to get songs from directory 
 async function getSongs() {
     let a = await fetch("url")
     let response = await a.text();
@@ -18,6 +18,10 @@ async function getSongs() {
 }
 
 async function main(){
+    // list of the songs 
     let songs = await getSongs();
     console.log(songs);
+
 }
+
+
