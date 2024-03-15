@@ -1,42 +1,95 @@
-console.log("Hello World");
+// console.log("Hello World");
 
 // fuction to get songs from directory 
 async function getSongs() {
-    let a = await fetch("http://127.0.0.1:5500/songs/")
+
+    let a = await fetch("http://127.0.0.1:5500/songs/");
     let response = await a.text();
-    let div = document.createElement("div");
-    div.innerHTML = response;
-    let as = div.getElementsByTagName("a");
+    // console.log(response);
+
+    let parser = new DOMParser();
+    let htmlDoc = parser.parseFromString(response, 'text/html');
+
+    // Select all anchor elements with class "icon-video" which are links to songs
+    let songLinks = htmlDoc.querySelectorAll('a.icon-video');
+
+    // Extract href attributes and log them
+    let songUrls = Array.from(songLinks).map(link => link.getAttribute('href'));
+    console.log(songUrls);
     let songs = [];
-    for (let index = 0; index < as.length; index++) {
-        const element = as[index];
-        if (element.href.endsWith(".mpeg")) {
-            songs.push(element.href);
+    for (let index = 0; index < songUrls.length; index++) {
+        const element = songUrls[index];
+        let songUrl = element.slice(7);
+        if (songUrl.endsWith(".mpeg")) {
+            songs.push(songUrl);
         }
     }
+    console.log(songs);
     return songs
 }
 
+
+// async function main() {
+//     // list of the songs
+//     let songs = await getSongs();
+//     console.log(songs);
+
+//     let songUl = document.querySelector(".songList").getElementsByTagName("ul")[0];
+//     for (const song of songs) {
+//         songUl.innerHTML = songUl.innerHTML + `<li>song</li>`;
+//     }
+
+//     // Play the first song
+//     var audio = new Audio(songs[0]);
+//     audio.play();
+
+//     audio.addEventListener("loadeddata", () => {
+//         let duration = audio.duration;
+//         // The duration variable now holds the duration (in seconds) of the audio clip
+//         console.log(duration);
+//         console.log(audio.currentSrc, audio.currentTime);
+//     });
+// }
+
+
+// main()
+
 async function main() {
-    // list of the songs 
-    let songs = await getSongs();
-    console.log(songs);
+    try {
+        // list of the songs
+        let songs = await getSongs();
+        console.log(songs);
 
-    let songUl = document.querySelector(".songList").getElementsByTagName("ul")[0];
-    for (const song of songs) {
-        songUl.innerHTML = songUl.innerHTML + `<li>song</li>`;
+        // Find the <ul> element with class "songList"
+        let songUl = document.querySelector(".songList ul");
+
+        // Clear the existing content of <ul>
+        songUl.innerHTML = "";
+
+        // Add each song to the list
+        songs.forEach(song => {
+            songUl.innerHTML += `<li>${song.replaceAll("%20",' ')}</li>`;
+        });
+
+        // Play the first song
+        if (songs.length > 0) {
+            var audio = new Audio(songs[0]);
+            audio.play();
+
+            audio.addEventListener("loadeddata", () => {
+                let duration = audio.duration;
+                // The duration variable now holds the duration (in seconds) of the audio clip
+                console.log("Duration:", duration);
+                console.log("Current source:", audio.currentSrc);
+                console.log("Current time:", audio.currentTime);
+            });
+        } else {
+            console.log("No songs found.");
+        }
+    } catch (error) {
+        console.error('Error in main:', error);
     }
-
-    // Play the first song 
-    var audio = new Audio(songs[0]);
-    audio.play();
-
-    audio.addEventListener("loadeddata", () => {
-        let duration = audio.duration;
-        // The duration variable now holds the duration (in seconds) of the audio clip
-        console.log(duration);
-        console.log(audio.currentSrc, audio.currentTime);
-    });
 }
 
-
+// Call main function when the DOM is loaded
+document.addEventListener("DOMContentLoaded", main);
