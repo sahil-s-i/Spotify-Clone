@@ -68,7 +68,15 @@ async function main() {
 
         // Add each song to the list
         songs.forEach(song => {
-            songUl.innerHTML += `<li>${song.replaceAll("%20",' ')}</li>`;
+            songUl.innerHTML += `<li><img class="invert" src="./imgsandlogos/music.svg" alt="Music icon">
+                            <div class="songInfo">
+                                <div class="">${song.replaceAll("%20", ' ')}</div>
+                                <div>Arijith singh</div>
+                            </div>
+                            <div class="playNow">
+                                <span>Play Now</span>
+                                <img class="invert" src="./imgsandlogos/playicon.svg" alt="Music icon">
+                            </div></li>`;
         });
 
         // Play the first song
