@@ -76,7 +76,7 @@ body {
 }
 
 .songList{
-    height: 688px;
+    height: 488px;
     overflow: auto;
     margin: 10px 0 44px 0 ;
 }
@@ -213,10 +213,10 @@ body {
 /* playbar */
 
 .playbar {
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 30px;
     background-color: rgb(211, 205, 205);
-    width: 90%;
+    width: 64vw;
     padding: 10px;
 }
 
