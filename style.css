@@ -58,20 +58,32 @@ body {
 
 .songList ul,
 .songInfoDiv ul {
-    padding: 0 42px;
+    padding: 0 12px;
 }
 
 .songList ul li,
 .songInfoDiv ul li {
     list-style-type: decimal;
     display: flex;
-    gap: 34px;
+    gap: 10px;
     cursor: pointer;
     padding: 12px 0;
     border: 1px solid white;
     margin: 12px 0;
     padding: 13px;
     border-radius: 5px;
+    justify-content: space-between;
+}
+
+.songList{
+    height: 688px;
+    overflow: auto;
+    margin: 10px 0 44px 0 ;
+}
+
+.songList .songInfo {
+    font-size: 13px;
+    width: 344px;
 }
 
 .playNow {
