@@ -1,4 +1,5 @@
 // console.log("Hello World");
+let currentSong = new Audio();
 
 // fuction to get songs from directory 
 async function getSongs() {
@@ -52,12 +53,18 @@ async function getSongs() {
 // }
 
 
+
+const playMusic = (track) => {
+    currentSong.src = "/songs/" + track;
+    currentSong.play();
+    play.src="./imgsandlogos/pauseicon.svg";
+}
+
+
 // main()
 
 async function main() {
     try {
-
-        let currentSong;
         // list of the songs
         let songs = await getSongs();
         // console.log(songs);
@@ -86,12 +93,23 @@ async function main() {
             e.addEventListener("click", element => {
 
                 console.log(e.querySelector(".songInfo").firstElementChild.innerHTML);
-                playMusic(e.querySelector(".songInfo").firstElementChild.innerHTML);
+                playMusic(e.querySelector(".songInfo").firstElementChild.innerHTML.trim());
             })
         })
 
 
+        // Attach event listner to play,previous and next song 
+        play.addEventListener("click", () => {
+            if (currentSong.paused) {
+                currentSong.play();
+                play.src="./imgsandlogos/pauseicon.svg";
+            }
+            else {
+                currentSong.pause();
+                play.src="./imgsandlogos/playicon.svg";
+            }
 
+        })
 
 
 
