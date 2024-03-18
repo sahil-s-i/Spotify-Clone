@@ -15,7 +15,7 @@ async function getSongs() {
 
     // Extract href attributes and log them
     let songUrls = Array.from(songLinks).map(link => link.getAttribute('href'));
-    console.log(songUrls);
+    // console.log(songUrls);
     let songs = [];
     for (let index = 0; index < songUrls.length; index++) {
         const element = songUrls[index];
@@ -24,7 +24,7 @@ async function getSongs() {
             songs.push(songUrl);
         }
     }
-    console.log(songs);
+    // console.log(songs);
     return songs
 }
 
@@ -56,9 +56,11 @@ async function getSongs() {
 
 async function main() {
     try {
+
+        let currentSong;
         // list of the songs
         let songs = await getSongs();
-        console.log(songs);
+        // console.log(songs);
 
         // Find the <ul> element with class "songList"
         let songUl = document.querySelector(".songList ul");
@@ -79,7 +81,14 @@ async function main() {
                             </div></li>`;
         });
 
-        
+        // Attach event listner to the to each song 
+        Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e => {
+            e.addEventListener("click", element => {
+
+                console.log(e.querySelector(".songInfo").firstElementChild.innerHTML);
+                playMusic(e.querySelector(".songInfo").firstElementChild.innerHTML);
+            })
+        })
 
 
 
