@@ -79,21 +79,30 @@ async function main() {
                             </div></li>`;
         });
 
-        // Play the first song
-        if (songs.length > 0) {
-            var audio = new Audio(songs[0]);
-            audio.play();
+        
 
-            audio.addEventListener("loadeddata", () => {
-                let duration = audio.duration;
-                // The duration variable now holds the duration (in seconds) of the audio clip
-                console.log("Duration:", duration);
-                console.log("Current source:", audio.currentSrc);
-                console.log("Current time:", audio.currentTime);
-            });
-        } else {
-            console.log("No songs found.");
-        }
+
+
+
+
+
+
+
+        // // Play the first song
+        // if (songs.length > 0) {
+        //     var audio = new Audio(songs[0]);
+        //     audio.play();
+
+        //     audio.addEventListener("loadeddata", () => {
+        //         let duration = audio.duration;
+        //         // The duration variable now holds the duration (in seconds) of the audio clip
+        //         console.log("Duration:", duration);
+        //         console.log("Current source:", audio.currentSrc);
+        //         console.log("Current time:", audio.currentTime);
+        //     });
+        // } else {
+        //     console.log("No songs found.");
+        // }
     } catch (error) {
         console.error('Error in main:', error);
     }
