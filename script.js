@@ -57,7 +57,9 @@ async function getSongs() {
 const playMusic = (track) => {
     currentSong.src = "/songs/" + track;
     currentSong.play();
-    play.src="./imgsandlogos/pauseicon.svg";
+    play.src = "./imgsandlogos/pauseicon.svg";
+    document.querySelector(".songinfo").innerHTML = `${track}`
+    document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
 }
 
 
@@ -102,13 +104,12 @@ async function main() {
         play.addEventListener("click", () => {
             if (currentSong.paused) {
                 currentSong.play();
-                play.src="./imgsandlogos/pauseicon.svg";
+                play.src = "./imgsandlogos/pauseicon.svg";
             }
             else {
                 currentSong.pause();
-                play.src="./imgsandlogos/playicon.svg";
+                play.src = "./imgsandlogos/playicon.svg";
             }
-
         })
 
 
