@@ -246,6 +246,7 @@ body {
     border-radius: 10px;
     /* margin: 0px auto; */
     margin: 6px;
+    cursor: pointer;
 }
 
 .circle {
