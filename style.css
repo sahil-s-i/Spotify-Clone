@@ -253,6 +253,9 @@ body {
     gap: 18px;
 }
 
+.songbuttons img{
+    cursor: pointer;
+}
 
 
 /* website's dark scroll bar  */
