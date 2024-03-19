@@ -29,6 +29,25 @@ async function getSongs() {
     return songs
 }
 
+function secondsToMinutesSeconds(seconds) {
+    if (isNaN(seconds) || seconds < 0) {
+        return "invalid input";
+        // return "00:00";
+    }
+
+    var minutes = Math.floor(seconds / 60);
+    var remainingSeconds = Math.floor(seconds % 60);
+
+    // Formatting minutes and seconds to ensure two digits
+    var minutesString = String(minutes).padStart(2, '0');
+    var secondsString = String(remainingSeconds).padStart(2, '0');
+
+    return `${minutesString}:${secondsString}`
+}
+
+// Example usage
+// console.log(secondsToMinutesSeconds(75)); // Output: "01:15"
+
 
 // async function main() {
 //     // list of the songs
@@ -54,11 +73,13 @@ async function getSongs() {
 
 
 
-const playMusic = (track) => {
+const playMusic = (track, pause = false) => {
     currentSong.src = "/songs/" + track;
-    currentSong.play();
-    play.src = "./imgsandlogos/pauseicon.svg";
-    document.querySelector(".songinfo").innerHTML = `${track}`
+    if (!pause) {
+        currentSong.play();
+        play.src = "./imgsandlogos/pauseicon.svg";
+    }
+    document.querySelector(".songinfo").innerHTML = decodeURI(`${track}`)
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
 }
 
@@ -70,6 +91,7 @@ async function main() {
         // list of the songs
         let songs = await getSongs();
         // console.log(songs);
+        playMusic(songs[0], true)
 
         // Find the <ul> element with class "songList"
         let songUl = document.querySelector(".songList ul");
@@ -112,7 +134,11 @@ async function main() {
             }
         })
 
-
+        // Listen for time update event 
+        currentSong.addEventListener("timeupdate", () => {
+            console.log(currentSong.currentTime, currentSong.duration);
+            document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`
+        })
 
 
 
