@@ -212,6 +212,19 @@ body {
 
 /* playbar */
 
+.aboveBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.songinfo,
+.songtime {
+    color: black;
+    padding: 0px 22px;
+}
+
+
 .playbar {
     position: fixed;
     bottom: 30px;
@@ -253,7 +266,7 @@ body {
     gap: 18px;
 }
 
-.songbuttons img{
+.songbuttons img {
     cursor: pointer;
 }
 
