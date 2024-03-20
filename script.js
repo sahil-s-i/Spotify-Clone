@@ -138,8 +138,13 @@ async function main() {
         currentSong.addEventListener("timeupdate", () => {
             console.log(currentSong.currentTime, currentSong.duration);
             document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`
+            document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration) * 100 + "%";
         })
 
+        // Add an event listner to seek bar 
+        document.querySelector(".seekbar").addEventListener("click", e => {
+            document.querySelector(".circle").style.left = ((e.offsetX / e.target.getBoundingClientRect().width) * 100) + "%";
+        })
 
 
         // // Play the first song
