@@ -18,8 +18,8 @@ body {
     padding: 10px;
 }
 
-.right {
-    width: 75vw;
+.logo img {
+    width: 100px;
 }
 
 .home ul {
@@ -115,6 +115,9 @@ body {
 
 
 /* right section  */
+.right {
+    width: 75vw;
+}
 
 .right {
     margin: 16px 0px;
