@@ -153,6 +153,11 @@ async function main() {
             document.querySelector(".left").style.left = "0";
         })
 
+        // Addd an event listener to close a left section 
+        document.querySelector(".close").addEventListener("click", () => {
+            document.querySelector(".left").style.left = "-120%";
+        })
+
 
         // // Play the first song
         // if (songs.length > 0) {
