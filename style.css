@@ -272,6 +272,7 @@ body {
 }
 
 .songbuttons img {
+    width: 35px;
     cursor: pointer;
 }
 
