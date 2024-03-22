@@ -137,7 +137,7 @@ async function main() {
         // Listen for time update event 
         currentSong.addEventListener("timeupdate", () => {
             console.log(currentSong.currentTime, currentSong.duration);
-            document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`
+            document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)} / ${secondsToMinutesSeconds(currentSong.duration)}`
             document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration) * 100 + "%";
         })
 
