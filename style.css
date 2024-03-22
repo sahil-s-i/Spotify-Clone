@@ -343,6 +343,10 @@ body {
         top: 25px;
     }
 
+    .close {
+        display: block;
+    }
+
     .close img {
         width: 30px;
         cursor: pointer;
@@ -350,6 +354,13 @@ body {
 
     .right {
         width: 100vw;
+        margin: 0;
+    }
+
+    .aboveBar {
+        flex-direction: column;
+        gap: 34px;
+        align-items: center;
     }
 
     .playbar {
