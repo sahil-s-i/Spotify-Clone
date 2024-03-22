@@ -184,7 +184,7 @@ body {
     gap: 10px;
     flex-wrap: wrap;
     margin: 30px;
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 70vh;
 }
 
@@ -219,6 +219,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 20px 0;
 }
 
 .songinfo,
@@ -236,7 +237,7 @@ body {
     border-radius: 10px;
     width: 64vw;
     padding: 10px;
-    height: 40px;
+    min-height: 40px;
 }
 
 .seekbar {
@@ -280,7 +281,11 @@ body {
 .hamburger {
     display: none;
     height: 60px;
-    width: 60px;
+    width: 50px;
+}
+
+.hamburger img {
+    cursor: pointer;
 }
 
 .hambargerContainer {
@@ -288,6 +293,10 @@ body {
     justify-content: center;
     align-items: center;
     gap: 14px;
+}
+
+.close {
+    display: none;
 }
 
 /* website's dark scroll bar  */
@@ -335,6 +344,7 @@ body {
 
     .close img {
         width: 30px;
+        cursor: pointer;
     }
 
     .right {
@@ -342,10 +352,23 @@ body {
     }
 
     .playbar {
-        width: 95vw;
+        width: calc(100vw - 60px);
+    }
+
+    .seekbar {
+        width: calc(100vw - 70px);
     }
 
     .hamburger {
         display: block;
+    }
+
+    .card {
+        width: 90vw;
+    }
+
+    .cardContainer {
+        margin: 0;
+        justify-content: center;
     }
 }
