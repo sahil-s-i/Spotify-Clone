@@ -179,6 +179,10 @@ body {
     padding: 16px;
 }
 
+.spotifyPlaylists h1 {
+    padding: 16px;
+}
+
 .cardContainer {
     display: flex;
     gap: 10px;
@@ -364,11 +368,11 @@ body {
     }
 
     .playbar {
-        width: calc(100vw - 60px);
+        width: calc(100vw - 75px);
     }
 
     .seekbar {
-        width: calc(100vw - 70px);
+        width: calc(100vw - 120px);
     }
 
     .hamburger {
