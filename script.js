@@ -1,5 +1,7 @@
 // console.log("Hello World");
 let currentSong = new Audio();
+let songs;
+
 
 // fuction to get songs from directory 
 async function getSongs() {
@@ -31,8 +33,8 @@ async function getSongs() {
 
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
-        return "invalid input";
-        // return "00:00";
+        // return "invalid input";
+        return "00:00";
     }
 
     var minutes = Math.floor(seconds / 60);
@@ -89,7 +91,7 @@ const playMusic = (track, pause = false) => {
 async function main() {
     try {
         // list of the songs
-        let songs = await getSongs();
+        songs = await getSongs();
         // console.log(songs);
         playMusic(songs[0], true)
 
@@ -157,6 +159,27 @@ async function main() {
         document.querySelector(".close").addEventListener("click", () => {
             document.querySelector(".left").style.left = "-120%";
         })
+
+        // Add an event listener to the song button to play previous song 
+        previous.addEventListener("click", () => {
+            console.log('previous clicked');
+            let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+            console.log(songs, index);
+            if ((index - 1) >= 0) {
+                playMusic(songs[index - 1]);
+            }
+        })
+
+        // Add an event listener to the song button to play  next song
+        next.addEventListener("click", () => {
+            console.log('next clicked');
+            let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+            console.log(songs, index);
+            if ((index + 1) > length) {
+                playMusic(songs[index + 1]);
+            }
+        })
+
 
 
         // // Play the first song
