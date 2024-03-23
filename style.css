@@ -226,12 +226,9 @@ body {
     margin: 20px 0;
 }
 
-.songInfo {
-    width: 250px;
-}
-
 .songinfo,
 .songtime {
+    width: 250px;
     color: black;
     padding: 0px 22px;
 }
@@ -293,15 +290,17 @@ body {
     width: 50px;
 }
 
-.hamburger img {
-    cursor: pointer;
-}
+
 
 .hambargerContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 14px;
+}
+
+.hambargerContainer img {
+    cursor: pointer;
 }
 
 .close {
@@ -343,6 +342,7 @@ body {
         z-index: 3;
         width: 370px;
         background-color: black;
+        padding: 0;
     }
 
     .left .close {
@@ -373,6 +373,15 @@ body {
 
     .playbar {
         width: calc(100vw - 75px);
+    }
+
+    .songinfo,
+    .songtime {
+        width: auto;
+    }
+
+    .songInfo Div {
+        word-break: break-all;
     }
 
     .seekbar {
