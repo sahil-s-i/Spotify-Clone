@@ -226,6 +226,10 @@ body {
     margin: 20px 0;
 }
 
+.songInfo {
+    width: 250px;
+}
+
 .songinfo,
 .songtime {
     color: black;
