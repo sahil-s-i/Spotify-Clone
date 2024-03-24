@@ -290,13 +290,17 @@ body {
     align-items: center;
 }
 
-.volume{
+.volume {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
+    gap: 12px;
 }
 
+.volume img {
+    width: 25px;
+}
 
 /* media query items  */
 
@@ -349,7 +353,7 @@ body {
 
 /* MEDIA QUERIES  */
 
-@media (max-width : 1400px) {
+@media (max-width : 1200px) {
     .left {
         background-color: red;
         position: absolute;
@@ -404,12 +408,17 @@ body {
         width: calc(100vw - 120px);
     }
 
+    .timevolume{
+        flex-direction: column;
+        gap: 12px;
+    }
+
     .hamburger {
         display: block;
     }
 
     .card {
-        width: 90vw;
+        width: 44vw;
     }
 
     .cardContainer {
@@ -417,3 +426,4 @@ body {
         justify-content: center;
     }
 }
+
