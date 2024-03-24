@@ -118,7 +118,7 @@ async function main() {
         Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e => {
             e.addEventListener("click", element => {
 
-                console.log(e.querySelector(".songInfo").firstElementChild.innerHTML);
+                // console.log(e.querySelector(".songInfo").firstElementChild.innerHTML);
                 playMusic(e.querySelector(".songInfo").firstElementChild.innerHTML.trim());
             })
         })
@@ -138,7 +138,7 @@ async function main() {
 
         // Listen for time update event 
         currentSong.addEventListener("timeupdate", () => {
-            console.log(currentSong.currentTime, currentSong.duration);
+            // console.log(currentSong.currentTime, currentSong.duration);
             document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)} / ${secondsToMinutesSeconds(currentSong.duration)}`
             document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration) * 100 + "%";
         })
@@ -164,7 +164,7 @@ async function main() {
         previous.addEventListener("click", () => {
             console.log('previous clicked');
             let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
-            console.log(songs, index);
+            // console.log(songs, index);
             if ((index - 1) >= 0) {
                 playMusic(songs[index - 1]);
             }
@@ -174,10 +174,16 @@ async function main() {
         next.addEventListener("click", () => {
             console.log('next clicked');
             let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
-            console.log(songs, index);
+            // console.log(songs, index);
             if ((index + 1) < songs.length) {
                 playMusic(songs[index + 1]);
             }
+        })
+
+        //Add functionality to volume high and low
+        document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
+            console.log("setting volume to " + e.target.value);
+            currentSong.volume = parseInt(e.target.value)/100;
         })
 
 
