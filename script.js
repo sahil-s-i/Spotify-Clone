@@ -47,34 +47,6 @@ function secondsToMinutesSeconds(seconds) {
     return `${minutesString}:${secondsString}`
 }
 
-// Example usage
-// console.log(secondsToMinutesSeconds(75)); // Output: "01:15"
-
-
-// async function main() {
-//     // list of the songs
-//     let songs = await getSongs();
-//     console.log(songs);
-
-//     let songUl = document.querySelector(".songList").getElementsByTagName("ul")[0];
-//     for (const song of songs) {
-//         songUl.innerHTML = songUl.innerHTML + `<li>song</li>`;
-//     }
-
-//     // Play the first song
-//     var audio = new Audio(songs[0]);
-//     audio.play();
-
-//     audio.addEventListener("loadeddata", () => {
-//         let duration = audio.duration;
-//         // The duration variable now holds the duration (in seconds) of the audio clip
-//         console.log(duration);
-//         console.log(audio.currentSrc, audio.currentTime);
-//     });
-// }
-
-
-
 const playMusic = (track, pause = false) => {
     currentSong.src = "/songs/" + track;
     if (!pause) {
@@ -186,23 +158,6 @@ async function main() {
             currentSong.volume = parseInt(e.target.value)/100;
         })
 
-
-
-        // // Play the first song
-        // if (songs.length > 0) {
-        //     var audio = new Audio(songs[0]);
-        //     audio.play();
-
-        //     audio.addEventListener("loadeddata", () => {
-        //         let duration = audio.duration;
-        //         // The duration variable now holds the duration (in seconds) of the audio clip
-        //         console.log("Duration:", duration);
-        //         console.log("Current source:", audio.currentSrc);
-        //         console.log("Current time:", audio.currentTime);
-        //     });
-        // } else {
-        //     console.log("No songs found.");
-        // }
     } catch (error) {
         console.error('Error in main:', error);
     }
