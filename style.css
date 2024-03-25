@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
+:root {
+    --a: 0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -198,6 +202,13 @@ body {
     border-radius: 5px;
     background-color: #252525;
     position: relative;
+    transition: all .9s;
+}
+
+.card:hover {
+    background-color: rgb(48, 47, 47);
+    cursor: pointer;
+    --a: 1;
 }
 
 .card>* {
@@ -213,7 +224,7 @@ body {
     position: absolute;
     right: 20px;
     top: 153px;
-    opacity: 0;
+    opacity: var(--a);
     transition: all 1s ease-out;
 }
 
@@ -408,7 +419,7 @@ body {
         width: calc(100vw - 120px);
     }
 
-    .timevolume{
+    .timevolume {
         flex-direction: column;
         gap: 12px;
     }
@@ -427,3 +438,8 @@ body {
     }
 }
 
+@media (max-width : 400px) {
+    .card {
+        width: 84vw;
+    }
+}
