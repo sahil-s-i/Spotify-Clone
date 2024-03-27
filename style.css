@@ -189,7 +189,7 @@ body {
 
 .cardContainer {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     flex-wrap: wrap;
     margin: 30px;
     overflow-y: auto;
